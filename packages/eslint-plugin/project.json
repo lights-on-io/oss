@@ -37,7 +37,7 @@
     "version-bump": {
       "builder": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "npm run release -- --skip.changelog --skip.commit --skip.tag --path=packages/eslint-plugin --bumpFiles=packages/eslint-plugin/package.json"
+        "command": "standard-version --skip.changelog --skip.commit --skip.tag --path=packages/eslint-plugin --bumpFiles=packages/eslint-plugin/package.json"
       }
     },
     "publish": {
