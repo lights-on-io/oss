@@ -1,0 +1,16 @@
+export default {
+	SwitchCase: 1,
+	VariableDeclarator: 'first',
+	outerIIFEBody: 1,
+	MemberExpression: 1,
+	FunctionDeclaration: { parameters: 'first' },
+	FunctionExpression: { parameters: 'first' },
+	CallExpression: { arguments: 'first' },
+	ArrayExpression: 'first',
+	ObjectExpression: 'first',
+	ImportDeclaration: 'first',
+	flatTernaryExpressions: true,
+	offsetTernaryExpressions: true,
+	ignoredNodes: [],
+	ignoreComments: false,
+};
