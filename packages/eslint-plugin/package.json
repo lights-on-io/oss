@@ -1,0 +1,53 @@
+{
+  "name": "@lights-on/eslint-plugin",
+  "version": "1.0.0",
+  "description": "ESlint plugin used at LightON. Based on Airbnb's ESlint config.",
+  "author": "LightsON",
+  "homepage": "https://lights-on.io",
+  "contributors": [
+    {
+      "name": "Sebastian Oley",
+      "url": "https://github.com/bddy"
+    },
+    {
+      "name": "Alexander Hänel"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lights-on-io/oss"
+  },
+  "bugs": {
+    "url": "https://github.com/lights-on-io/oss/issues"
+  },
+  "keywords": [
+    "lights-on",
+    "styleguide",
+    "eslint",
+    "eslintplugin",
+    "plugin",
+    "airbnb",
+    "typescript",
+    "strict"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.22.1"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  }
+}
