@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+[ "" != "1" ] && ( exec < /dev/tty && git cz --hook ) || true 2> /dev/null
