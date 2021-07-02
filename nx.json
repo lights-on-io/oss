@@ -1,7 +1,7 @@
 {
-  "npmScope": "oss",
+  "npmScope": "@lights-on",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "develop"
   },
   "implicitDependencies": {
     "package.json": {
