@@ -1,5 +1,5 @@
 {
-  "name": "@lights-on/eslint-plugin",
+  "name": "@lights-on-io/eslint-plugin",
   "version": "1.0.0",
   "description": "ESlint plugin used at LightON. Based on Airbnb's ESlint config.",
   "author": "LightsON",
