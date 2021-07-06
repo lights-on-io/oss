@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: 14
       - run: npm install # switch to `npm ci` once eslint plugin has been published
-      - run: nx affected:release
+      - run: npm run affected:release

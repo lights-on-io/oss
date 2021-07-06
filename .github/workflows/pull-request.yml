@@ -14,6 +14,6 @@ jobs:
         with:
           node-version: 14
       - run: npm install # switch to `npm ci` once eslint plugin has been published
-      - run: nx affected:lint
-      - run: nx affected:test
-      - run: nx affected:e2e --headless
+      - run: npm run affected:lint
+      - run: npm run affected:test
+      - run: npm run affected:e2e:ci
