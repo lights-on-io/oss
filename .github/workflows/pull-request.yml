@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - run: npm ci
+      - run: npm install # switch to `npm ci` once eslint plugin has been published
       - run: nx affected:lint
       - run: nx affected:test
       - run: nx affected:e2e --headless

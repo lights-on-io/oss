@@ -13,11 +13,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - run: npm ci
-      - run: nx affected:version-bump
-      - run: nx affected:build
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: 'dist/packages/eslint-plugin/package.json'
-          access: 'public'
+      - run: npm install # switch to `npm ci` once eslint plugin has been published
+      - run: nx affected:release
