@@ -34,7 +34,9 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install node modules
-        run: npm ci
+        # use npm install as long as we need postinstall scripts.
+        # we can switch to `npm ci` when eslint-plugin gets published.
+        run: npm install
 
       - name: Build check
         shell: bash
