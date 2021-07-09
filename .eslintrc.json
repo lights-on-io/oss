@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx", "@lights-on"],
+  "plugins": ["@nrwl/nx", "@lights-on-io"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -23,14 +23,14 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@lights-on/typescript-strict", "prettier"],
+      "extends": ["plugin:@lights-on-io/typescript-strict", "prettier"],
       "parserOptions": {
         "project": "./tsconfig.*?.json"
       }
     },
     {
       "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@lights-on/javascript-strict", "prettier"]
+      "extends": ["plugin:@lights-on-io/javascript-strict", "prettier"]
     }
   ]
 }

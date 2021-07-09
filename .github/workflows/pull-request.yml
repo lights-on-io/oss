@@ -1,0 +1,61 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - master
+
+env:
+  AFFECTED_BASE: origin/master
+  NPM_CACHE_NAME: npm
+
+jobs:
+  code-check:
+    name: Code Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout with history
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Setup npm cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-
+            ${{ runner.os }}-
+
+      - name: Install node modules
+        # use npm install as long as we need postinstall scripts.
+        # we can switch to `npm ci` when eslint-plugin gets published.
+        run: npm install
+
+      - name: Build check
+        shell: bash
+        run: npm run affected:build -- --base=$AFFECTED_BASE
+
+#      its recommended to run nx format:check in the ci, but it always fails. needs review.
+#      https://nx.dev/latest/angular/guides/monorepo-nx-enterprise#developer-workflow
+#      - name: Format check
+#        shell: bash
+#        run: npm run format:check -- --base=$AFFECTED_BASE
+
+      - name: Lint affected projects
+        shell: bash
+        run: npm run affected:lint -- --base=$AFFECTED_BASE
+
+      - name: Test affected projects
+        shell: bash
+        run: npm run affected:test -- --base=$AFFECTED_BASE
+
+      - name: End-to-end test affected projects
+        shell: bash
+        run: npm run affected:e2e -- --base=$AFFECTED_BASE --headless
