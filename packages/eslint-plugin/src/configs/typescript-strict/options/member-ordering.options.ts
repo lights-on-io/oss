@@ -4,12 +4,14 @@ export default {
 
 		'abstract-field',
 		'static-field',
+    'static-method',
 		'decorated-field',
 		'instance-field',
 		'field',
 
 		'public-abstract-field',
 		'public-static-field',
+    'public-static-method',
 		'public-decorated-field',
 		'public-instance-field',
 		'public-field',
@@ -32,13 +34,11 @@ export default {
 		'private-constructor',
 
 		'abstract-method',
-		'static-method',
 		'decorated-method',
 		'instance-method',
 		'method',
 
 		'public-abstract-method',
-		'public-static-method',
 		'public-decorated-method',
 		'public-instance-method',
 		'public-method',
