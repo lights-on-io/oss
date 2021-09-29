@@ -27,6 +27,7 @@ export default {
 	 *  js rules which have to be turned off due to conflicts
 	 *  in combination with certain typescript rules
 	 */
+  'curly': ['error'],
 	'brace-style': 'off', // replaced by @typescript-eslint/brace-style
 	'comma-spacing': 'off', // replaced by @typescript-eslint/comma-spacing
 	'default-param-last': 'off', // replaced by @typescript-eslint/default-param-last
