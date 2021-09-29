@@ -13,7 +13,7 @@ export const options = [
 		selector: 'default',
 		modifiers: ['private'],
 		format: ['camelCase'],
-		leadingUnderscore: 'require',
+		leadingUnderscore: 'forbid',
 	},
 	{
 		selector: 'variable',
@@ -29,7 +29,7 @@ export const options = [
 	{
 		selector: 'parameter',
 		format: ['camelCase'],
-		leadingUnderscore: 'allow',
+		leadingUnderscore: 'forbid',
 	},
 	{
 		selector: 'typeLike',
