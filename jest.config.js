@@ -1,3 +1,3 @@
-module.exports = {
-	projects: ['<rootDir>/packages/eslint-plugin'],
-};
+const { getJestProjects } = require('@nrwl/jest');
+
+module.exports = { projects: getJestProjects() };

@@ -7,7 +7,8 @@
 			"executor": "@nrwl/linter:eslint",
 			"options": {
 				"lintFilePatterns": ["packages/eslint-plugin/**/*.ts"]
-			}
+			},
+			"outputs": ["{options.outputFile}"]
 		},
 		"test": {
 			"executor": "@nrwl/jest:jest",
@@ -28,30 +29,30 @@
 				"assets": ["packages/eslint-plugin/*.md"]
 			}
 		},
-    "install": {
-      "builder": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "nx build eslint-plugin && npm install --save-dev file:dist/packages/eslint-plugin"
-      }
-    },
-    "version-bump": {
-      "builder": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "standard-version --skip.changelog --skip.commit --skip.tag --path=packages/eslint-plugin --bumpFiles=packages/eslint-plugin/package.json"
-      }
-    },
-    "publish": {
-      "builder": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "nx build eslint-plugin && cd dist/packages/eslint-plugin && npm publish --access=public"
-      }
-    },
-    "release": {
-      "builder": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "nx version-bump eslint-plugin && nx publish eslint-plugin"
-      }
-    }
+		"install": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "nx build eslint-plugin && npm install --save-dev file:dist/packages/eslint-plugin"
+			}
+		},
+		"version-bump": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "standard-version --skip.changelog --skip.commit --skip.tag --path=packages/eslint-plugin --bumpFiles=packages/eslint-plugin/package.json"
+			}
+		},
+		"publish": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "nx build eslint-plugin && cd dist/packages/eslint-plugin && npm publish --access=public"
+			}
+		},
+		"release": {
+			"executor": "@nrwl/workspace:run-commands",
+			"options": {
+				"command": "nx version-bump eslint-plugin && nx publish eslint-plugin"
+			}
+		}
 	},
 	"tags": []
 }

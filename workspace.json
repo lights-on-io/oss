@@ -1,9 +1,6 @@
 {
-	"version": 2,
-	"projects": {
-		"eslint-plugin": "packages/eslint-plugin"
-	},
-	"cli": {
-		"defaultCollection": "@nrwl/workspace"
-	}
+  "version": 2,
+  "projects": {
+    "eslint-plugin": "packages/eslint-plugin"
+  }
 }
